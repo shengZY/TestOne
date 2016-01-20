@@ -28,6 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    self.title = @"NSNumberFormatterStyle";
     [self createSubViews];
 }
 
@@ -225,12 +226,22 @@
 }
 
 #pragma mark - getter&& setter
-
+//自定义textfield
 - (UITextField *)numTf {
     if (!_numTf) {
         _numTf = [[UITextField alloc]initWithFrame:CGRectMake(0, 0, 300, 44)];
         _numTf.placeholder = @"请输入数字";
         _numTf.delegate = self;
+        _numTf.borderStyle = UITextBorderStyleNone;
+//        _numTf.clipsToBounds = YES;
+        _numTf.layer.cornerRadius = 10.0;//边框颜色，宽度，圆角,但是只有UITextBorderStyleNone时候管用，其他模式下，不起作用。
+        _numTf.layer.borderWidth = 1;
+        _numTf.layer.borderColor = [UIColor redColor].CGColor;
+        UIImage * searchImage =[UIImage imageNamed:@"searchIcon"];
+        UIImageView * imageIV = [[UIImageView alloc]initWithFrame:CGRectMake(0, 10, searchImage.size.width, searchImage.size.height)];//想设置图片的位置，但是貌似不管用
+        imageIV.image =searchImage;
+        _numTf.leftView = imageIV;
+        _numTf.leftViewMode = UITextFieldViewModeAlways;//左边的视图，右边也一样可以添加，但是要设viewMode，不然不出来，，，
         _numTf.keyboardType = UIKeyboardTypeDecimalPad;
         _numTf.returnKeyType =  UIReturnKeyDone;
     }
