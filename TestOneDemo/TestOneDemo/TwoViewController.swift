@@ -16,7 +16,6 @@ class TwoViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.redColor();
         // Do any additional setup after loading the view.
-        self.navigationController!.interactivePopGestureRecognizer!.delegate = self;
     }
 
     override func didReceiveMemoryWarning() {

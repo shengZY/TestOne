@@ -30,7 +30,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.title = @"NSNumberFormatterStyle";
     [self createSubViews];
-    [self wholeScreenPopGesture];
+    [self wholeScreenPopGesture];//系统自带左划返回效果，但是自定义button就不行了，需要自己实现。还是借鉴别人的做法吧。
 }
 
 - (void)wholeScreenPopGesture{
@@ -39,7 +39,7 @@
     pan.delegate  = self;
     [self.view addGestureRecognizer:pan];
     self.navigationController.interactivePopGestureRecognizer.enabled = NO;
-    //Assigning to 'id<UIGestureRecognizerDelegate>_Nullable'from incompatible type'FirstViewController *const__strong'
+   
 }
 
 - (void)handleNavigationTransition:(UIGestureRecognizer *)gesture{
