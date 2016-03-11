@@ -15,7 +15,6 @@
 		2A0A65961C33DA7A00BBA955 /* TestOneDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A0A65951C33DA7A00BBA955 /* TestOneDemoUITests.m */; };
 		2A0C2A581C915A0D00159473 /* MianViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A0C2A571C915A0D00159473 /* MianViewController.m */; };
 		2A0C2A5A1C915EA100159473 /* TwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0C2A591C915EA100159473 /* TwoViewController.swift */; };
-		2A0C2A601C916A0200159473 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A0C2A5F1C916A0200159473 /* UINavigationController+FDFullscreenPopGesture.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,8 +53,6 @@
 		2A0C2A561C915A0D00159473 /* MianViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MianViewController.h; sourceTree = "<group>"; };
 		2A0C2A571C915A0D00159473 /* MianViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MianViewController.m; sourceTree = "<group>"; };
 		2A0C2A591C915EA100159473 /* TwoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoViewController.swift; sourceTree = "<group>"; };
-		2A0C2A5E1C916A0200159473 /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
-		2A0C2A5F1C916A0200159473 /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +110,6 @@
 				2A0A65761C33DA7900BBA955 /* FirstViewController.h */,
 				2A0A65771C33DA7900BBA955 /* FirstViewController.m */,
 				2A0C2A591C915EA100159473 /* TwoViewController.swift */,
-				2A0C2A5D1C9169D300159473 /* Extension */,
 				2A0A657C1C33DA7900BBA955 /* Assets.xcassets */,
 				2A0A65811C33DA7A00BBA955 /* Info.plist */,
 				2A0A65701C33DA7900BBA955 /* Supporting Files */,
@@ -146,15 +142,6 @@
 				2A0A65971C33DA7A00BBA955 /* Info.plist */,
 			);
 			path = TestOneDemoUITests;
-			sourceTree = "<group>";
-		};
-		2A0C2A5D1C9169D300159473 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				2A0C2A5E1C916A0200159473 /* UINavigationController+FDFullscreenPopGesture.h */,
-				2A0C2A5F1C916A0200159473 /* UINavigationController+FDFullscreenPopGesture.m */,
-			);
-			name = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,7 +272,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A0C2A601C916A0200159473 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				2A0C2A581C915A0D00159473 /* MianViewController.m in Sources */,
 				2A0A65781C33DA7900BBA955 /* FirstViewController.m in Sources */,
 				2A0A65751C33DA7900BBA955 /* AppDelegate.m in Sources */,

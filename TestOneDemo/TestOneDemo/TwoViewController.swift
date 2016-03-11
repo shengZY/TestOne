@@ -15,8 +15,8 @@ class TwoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.redColor();
-        self.fd_interactivePopDisabled = true;
         // Do any additional setup after loading the view.
+        self.navigationController!.interactivePopGestureRecognizer!.delegate = self;
     }
 
     override func didReceiveMemoryWarning() {

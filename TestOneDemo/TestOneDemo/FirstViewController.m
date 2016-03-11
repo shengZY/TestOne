@@ -10,7 +10,7 @@
 #define kScreenHeight   [UIScreen mainScreen].bounds.size.height
 #import "FirstViewController.h"
 
-@interface FirstViewController ()<UITableViewDataSource, UITableViewDelegate,UITextFieldDelegate>
+@interface FirstViewController ()<UITableViewDataSource, UITableViewDelegate,UITextFieldDelegate,UINavigationControllerDelegate>
 
 @property (nonatomic, strong)UITextField * numTf;
 @property (nonatomic, strong)UITableView * tableV;
@@ -30,8 +30,35 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.title = @"NSNumberFormatterStyle";
     [self createSubViews];
+    [self wholeScreenPopGesture];
 }
 
+- (void)wholeScreenPopGesture{
+    id taget = self.navigationController.interactivePopGestureRecognizer.delegate ;
+    UIPanGestureRecognizer * pan = [[UIPanGestureRecognizer alloc]initWithTarget:taget action:@selector(handleNavigationTransition:)];
+    pan.delegate  = self;
+    [self.view addGestureRecognizer:pan];
+    self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+    //Assigning to 'id<UIGestureRecognizerDelegate>_Nullable'from incompatible type'FirstViewController *const__strong'
+}
+
+- (void)handleNavigationTransition:(UIGestureRecognizer *)gesture{
+    
+}
+-(BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
+    if (self.navigationController.viewControllers.count<=1) {
+        return NO;
+    }
+    else{
+        CGPoint point = [gestureRecognizer locationInView:self.view];//全屏左划都可以返回，但是会和tableview的滑动删除冲突。
+        if (point.x > ([[UIScreen mainScreen] bounds].size.width *1)) {
+            return NO;
+        }
+        else{
+            return YES;
+        }
+    }
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
