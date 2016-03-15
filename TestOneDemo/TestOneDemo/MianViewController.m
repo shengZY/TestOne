@@ -47,14 +47,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row == 0) {
         UIViewController * contrller = [[NSClassFromString([self.dataArr objectAtIndex:indexPath.row]) alloc]init];
         [self.navigationController pushViewController:contrller animated:YES];
-    }
-    else{
-        TwoViewController * contrll = [[TwoViewController alloc]init];
-        [self.navigationController pushViewController:contrll animated:YES];
-    }
     
 }
 
@@ -73,6 +67,7 @@
         _dataArr = [[NSMutableArray alloc]init];
         [_dataArr addObject:@"FirstViewController"];
         [_dataArr addObject:@"TwoViewController"];
+        [_dataArr addObject:@"TouchIDViewController"];
     }
     return _dataArr;
 }

@@ -16,6 +16,7 @@
 		2A0A65961C33DA7A00BBA955 /* TestOneDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A0A65951C33DA7A00BBA955 /* TestOneDemoUITests.m */; };
 		2A0C2A581C915A0D00159473 /* MianViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A0C2A571C915A0D00159473 /* MianViewController.m */; };
 		2A0C2A5A1C915EA100159473 /* TwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0C2A591C915EA100159473 /* TwoViewController.swift */; };
+		2ABD2B391C97E4390066ACA5 /* TouchIDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ABD2B381C97E4390066ACA5 /* TouchIDViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		2A0C2A561C915A0D00159473 /* MianViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MianViewController.h; sourceTree = "<group>"; };
 		2A0C2A571C915A0D00159473 /* MianViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MianViewController.m; sourceTree = "<group>"; };
 		2A0C2A591C915EA100159473 /* TwoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoViewController.swift; sourceTree = "<group>"; };
+		2ABD2B371C97E4390066ACA5 /* TouchIDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchIDViewController.h; sourceTree = "<group>"; };
+		2ABD2B381C97E4390066ACA5 /* TouchIDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchIDViewController.m; sourceTree = "<group>"; };
 		E1EEB8A23F13B967CACB0F58 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4A12544968EC984C647A96D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,6 +120,8 @@
 				2A0A65761C33DA7900BBA955 /* FirstViewController.h */,
 				2A0A65771C33DA7900BBA955 /* FirstViewController.m */,
 				2A0C2A591C915EA100159473 /* TwoViewController.swift */,
+				2ABD2B371C97E4390066ACA5 /* TouchIDViewController.h */,
+				2ABD2B381C97E4390066ACA5 /* TouchIDViewController.m */,
 				2A0A657C1C33DA7900BBA955 /* Assets.xcassets */,
 				2A0A65811C33DA7A00BBA955 /* Info.plist */,
 				2A0A65701C33DA7900BBA955 /* Supporting Files */,
@@ -238,6 +243,7 @@
 				TargetAttributes = {
 					2A0A656C1C33DA7900BBA955 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 7KUG64QKWL;
 					};
 					2A0A65851C33DA7A00BBA955 = {
 						CreatedOnToolsVersion = 7.2;
@@ -350,6 +356,7 @@
 				2A0C2A581C915A0D00159473 /* MianViewController.m in Sources */,
 				2A0A65781C33DA7900BBA955 /* FirstViewController.m in Sources */,
 				2A0A65751C33DA7900BBA955 /* AppDelegate.m in Sources */,
+				2ABD2B391C97E4390066ACA5 /* TouchIDViewController.m in Sources */,
 				2A0A65721C33DA7900BBA955 /* main.m in Sources */,
 				2A0C2A5A1C915EA100159473 /* TwoViewController.swift in Sources */,
 			);
@@ -473,11 +480,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = TestOneDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Phyllis-yuu.TestOneDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "TestOneDemo/TestOneDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -489,11 +499,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = TestOneDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Phyllis-yuu.TestOneDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "TestOneDemo/TestOneDemo-Bridging-Header.h";
 			};
 			name = Release;
