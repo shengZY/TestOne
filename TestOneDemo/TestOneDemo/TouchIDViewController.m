@@ -39,58 +39,132 @@
     NSError * error;
     if ([context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&error]) {
         NSLog(@"设备支持Touch ID");
-        UIView * view = [[UIView alloc]initWithFrame:[UIScreen mainScreen].bounds];
-        view.backgroundColor = [UIColor whiteColor];
-        [self.view addSubview:view];
-        [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:@"指纹解锁" reply:^(BOOL success, NSError * _Nullable error) {
-            
-            if (success) {
-                NSLog(@"指纹识别成功");
-                
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [view removeFromSuperview];
-                    [[NSUserDefaults standardUserDefaults]setValue:[NSString stringWithFormat:@"%d",self.mySwitch.on] forKey:@"ontouch"];
-                });
+//        UIView * view = [[UIView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+//        view.backgroundColor = [UIColor whiteColor];
+//        [self.view addSubview:view];
+//        kLAPolicyDeviceOwnerAuthenticationWithBiometrics 。3次以后会提示识别识别。。然后没有后续操作，自己写。。
+//        LAPolicyDeviceOwnerAuthentication 用户指纹识别3次以后会自动跳出输入密码解锁页面。。。
+        NSData * currentDomainState =[[NSUserDefaults standardUserDefaults]valueForKey:@"TouchIDDomainState"];
+        
+        if (currentDomainState) {
+            if ([currentDomainState isEqualToData:context.evaluatedPolicyDomainState]) {
+                //没有添加指纹或删除，，
+                [context evaluatePolicy:LAPolicyDeviceOwnerAuthentication localizedReason:@"指纹解锁" reply:^(BOOL success, NSError * _Nullable error) {
+                    
+                    if (success) {
+                        NSLog(@"指纹识别成功");
+                        [[NSUserDefaults standardUserDefaults]setValue:currentDomainState forKey:@"TouchIDDomainState"];
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            //                    [view removeFromSuperview];
+                            [[NSUserDefaults standardUserDefaults]setValue:[NSString stringWithFormat:@"%d",self.mySwitch.on] forKey:@"ontouch"];
+                        });
+                    }
+                    else{
+                        if (error.code == kLAErrorAuthenticationFailed) {
+                            NSLog(@"指纹识别失败");
+                        }
+                        if (error.code == kLAErrorUserFallback) {
+                            NSLog(@"选择输入密码");
+                        }
+                        if (error.code == kLAErrorTouchIDNotAvailable) {
+                            NSLog(@"TouchID不可用,设备没有指纹传感器");
+                        }
+                        if (error.code == kLAErrorTouchIDNotEnrolled) {
+                            NSLog(@"TouchID不可用，用户没注册，没添加");
+                        }
+                        if (error.code == kLAErrorUserCancel) {
+                            NSLog(@"用户取消");
+                        }
+                        if (error.code == kLAErrorTouchIDLockout) {
+                            //指纹识别失败多次，要重新输入密码解锁指纹，或者如关机之后，再开机必须输入密码
+                            NSLog(@"指纹锁定，请输入开机密码，解锁指纹");
+                        }
+                        if (error.code == kLAErrorSystemCancel ) {
+                            NSLog(@"系统取消授权，有别的应用切入前台的时候，用户自己按了home键，或者自己点了别的应用");
+                        }
+                        if (error.code == kLAErrorPasscodeNotSet) {
+                            NSLog(@"没有设置开机密码，不能打开指纹验证");
+                        }
+                        if (error.code == kLAErrorInvalidContext) {
+                            NSLog(@"LAContext passed to this call has been previously invalidated.LAContext对象被释放，导致授权失败");
+                        }
+                        if (error.code == kLAErrorAppCancel) {
+                            NSLog(@"系统应用，例如电话、闹铃等导致App被挂起，取消了授权，不是用户导致的，是系统的应用来了挡不住的。");
+                        }
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            //                    [view removeFromSuperview];
+                            [[NSUserDefaults standardUserDefaults]setValue:[NSString stringWithFormat:@"%d",self.mySwitch.on] forKey:@"ontouch"];
+                        });
+                    }
+                    
+                }];
             }
             else{
-                if (error.code == kLAErrorAuthenticationFailed) {
-                    NSLog(@"指纹识别失败");
-                }
-                if (error.code == kLAErrorUserFallback) {
-                    NSLog(@"选择输入密码");
-                }
-                if (error.code == kLAErrorTouchIDNotAvailable) {
-                    NSLog(@"TouchID不可用,设备没有指纹传感器");
-                }
-                if (error.code == kLAErrorTouchIDNotEnrolled) {
-                    NSLog(@"TouchID不可用，用户没注册，没添加");
-                }
-                if (error.code == kLAErrorUserCancel) {
-                    NSLog(@"用户取消");
-                }
-                if (error.code == kLAErrorTouchIDLockout) {
-                    //指纹识别失败多次，要重新输入密码解锁指纹，或者如关机之后，再开机必须输入密码
-                    NSLog(@"指纹锁定，请输入开机密码，解锁指纹");
-                }
-                if (error.code == kLAErrorSystemCancel ) {
-                    NSLog(@"系统取消授权，有别的应用切入前台的时候，用户自己按了home键，或者自己点了别的应用");
-                }
-                if (error.code == kLAErrorPasscodeNotSet) {
-                    NSLog(@"没有设置开机密码，不能打开指纹验证");
-                }
-                if (error.code == kLAErrorInvalidContext) {
-                    NSLog(@"LAContext passed to this call has been previously invalidated.LAContext对象被释放，导致授权失败");
-                }
-                if (error.code == kLAErrorAppCancel) {
-                    NSLog(@"系统应用，例如电话、闹铃等导致App被挂起，取消了授权，不是用户导致的，是系统的应用来了挡不住的。");
-                }
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [view removeFromSuperview];
-                    [[NSUserDefaults standardUserDefaults]setValue:[NSString stringWithFormat:@"%d",self.mySwitch.on] forKey:@"ontouch"];
-                });
+                NSLog(@"有新添指纹，或者删除了某指纹。。");
+                UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"指纹库改变，请输入密码验证身份" preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction * action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                    [sender setOn:0 animated:YES];
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        //                    [[NSUserDefaults standardUserDefaults]setValue:[NSString stringWithFormat:@"%d",sender.on] forKey:@"ontouch"];
+                    });
+                }];
+                [alert addAction:action];
+                [self presentViewController:alert animated:YES completion:nil];
             }
-            
-        }];
+
+
+        }
+        else{
+            [context evaluatePolicy:LAPolicyDeviceOwnerAuthentication localizedReason:@"指纹解锁" reply:^(BOOL success, NSError * _Nullable error) {
+                
+                if (success) {
+                    NSLog(@"指纹识别成功");
+                    [[NSUserDefaults standardUserDefaults]setValue:currentDomainState forKey:@"TouchIDDomainState"];
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        //                    [view removeFromSuperview];
+                        [[NSUserDefaults standardUserDefaults]setValue:[NSString stringWithFormat:@"%d",self.mySwitch.on] forKey:@"ontouch"];
+                    });
+                }
+                else{
+                    if (error.code == kLAErrorAuthenticationFailed) {
+                        NSLog(@"指纹识别失败");
+                    }
+                    if (error.code == kLAErrorUserFallback) {
+                        NSLog(@"选择输入密码");
+                    }
+                    if (error.code == kLAErrorTouchIDNotAvailable) {
+                        NSLog(@"TouchID不可用,设备没有指纹传感器");
+                    }
+                    if (error.code == kLAErrorTouchIDNotEnrolled) {
+                        NSLog(@"TouchID不可用，用户没注册，没添加");
+                    }
+                    if (error.code == kLAErrorUserCancel) {
+                        NSLog(@"用户取消");
+                    }
+                    if (error.code == kLAErrorTouchIDLockout) {
+                        //指纹识别失败多次，要重新输入密码解锁指纹，或者如关机之后，再开机必须输入密码
+                        NSLog(@"指纹锁定，请输入开机密码，解锁指纹");
+                    }
+                    if (error.code == kLAErrorSystemCancel ) {
+                        NSLog(@"系统取消授权，有别的应用切入前台的时候，用户自己按了home键，或者自己点了别的应用");
+                    }
+                    if (error.code == kLAErrorPasscodeNotSet) {
+                        NSLog(@"没有设置开机密码，不能打开指纹验证");
+                    }
+                    if (error.code == kLAErrorInvalidContext) {
+                        NSLog(@"LAContext passed to this call has been previously invalidated.LAContext对象被释放，导致授权失败");
+                    }
+                    if (error.code == kLAErrorAppCancel) {
+                        NSLog(@"系统应用，例如电话、闹铃等导致App被挂起，取消了授权，不是用户导致的，是系统的应用来了挡不住的。");
+                    }
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        //                    [view removeFromSuperview];
+                        [[NSUserDefaults standardUserDefaults]setValue:[NSString stringWithFormat:@"%d",self.mySwitch.on] forKey:@"ontouch"];
+                    });
+                }
+                
+            }];
+        }
         
         
     }
