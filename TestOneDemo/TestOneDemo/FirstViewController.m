@@ -252,12 +252,20 @@
     return newStr;
 }
 
+- (void)searchTouchAction:(UIButton *)sender{
+    static BOOL isSecure;
+    self.numTf.secureTextEntry = isSecure;//是否变成密码。。明文变密文
+    isSecure = ! isSecure;
+    NSLog(@"leftView Touch %@",self.numTf.text);
+}
+
 #pragma mark - getter&& setter
 //自定义textfield
 - (UITextField *)numTf {
     if (!_numTf) {
         _numTf = [[UITextField alloc]initWithFrame:CGRectMake(0, 0, 300, 44)];
         _numTf.placeholder = @"请输入数字";
+        
         _numTf.delegate = self;
         _numTf.borderStyle = UITextBorderStyleNone;
 //        _numTf.clipsToBounds = YES;
@@ -265,10 +273,16 @@
         _numTf.layer.borderWidth = 1;
         _numTf.layer.borderColor = [UIColor redColor].CGColor;
         UIImage * searchImage =[UIImage imageNamed:@"searchIcon"];
-        UIImageView * imageIV = [[UIImageView alloc]initWithFrame:CGRectMake(0, 10, searchImage.size.width, searchImage.size.height)];//想设置图片的位置，但是貌似不管用
+        UIImageView * imageIV = [[UIImageView alloc]initWithFrame:CGRectMake(30, 0, searchImage.size.width, searchImage.size.height)];//想设置图片的位置，但是貌似不管用
         imageIV.image =searchImage;
-        _numTf.leftView = imageIV;
-        _numTf.leftViewMode = UITextFieldViewModeAlways;//左边的视图，右边也一样可以添加，但是要设viewMode，不然不出来，，，
+        imageIV.userInteractionEnabled = YES;
+        UITapGestureRecognizer * tap =[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(searchTouchAction:)];
+        [imageIV addGestureRecognizer:tap];
+        _numTf.clearButtonMode = UITextFieldViewModeAlways;
+//        _numTf.leftView = imageIV;
+//        _numTf.leftViewMode = UITextFieldViewModeAlways;//左边的视图，右边也一样可以添加，但是要设viewMode，不然不出来，，，
+        _numTf.rightView = imageIV;
+        _numTf.rightViewMode = UITextFieldViewModeAlways;
         _numTf.keyboardType = UIKeyboardTypeDecimalPad;
         _numTf.returnKeyType =  UIReturnKeyDone;
     }
