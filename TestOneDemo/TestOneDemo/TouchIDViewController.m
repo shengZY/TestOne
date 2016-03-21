@@ -103,6 +103,7 @@
             [sender setOn:0 animated:YES];
             dispatch_async(dispatch_get_main_queue(), ^{
                 [[NSUserDefaults standardUserDefaults]setValue:[NSString stringWithFormat:@"%d",sender.on] forKey:@"ontouch"];
+                [[NSUserDefaults standardUserDefaults]synchronize];
             });
         }];
         [alert addAction:action];

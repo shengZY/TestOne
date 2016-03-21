@@ -9,6 +9,7 @@
 #define kScreenWidth    [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight   [UIScreen mainScreen].bounds.size.height
 #import "FirstViewController.h"
+#import "TestTextField.h"
 
 @interface FirstViewController ()<UITableViewDataSource, UITableViewDelegate,UITextFieldDelegate,UINavigationControllerDelegate>
 
@@ -263,7 +264,7 @@
 //自定义textfield
 - (UITextField *)numTf {
     if (!_numTf) {
-        _numTf = [[UITextField alloc]initWithFrame:CGRectMake(0, 0, 300, 44)];
+        _numTf = [[TestTextField alloc]initWithFrame:CGRectMake(0, 0, 300, 44)];
         _numTf.placeholder = @"请输入数字";
         
         _numTf.delegate = self;
@@ -273,15 +274,25 @@
         _numTf.layer.borderWidth = 1;
         _numTf.layer.borderColor = [UIColor redColor].CGColor;
         UIImage * searchImage =[UIImage imageNamed:@"searchIcon"];
-        UIImageView * imageIV = [[UIImageView alloc]initWithFrame:CGRectMake(30, 0, searchImage.size.width, searchImage.size.height)];//想设置图片的位置，但是貌似不管用
+        UIImageView * imageIV = [[UIImageView alloc]initWithFrame:CGRectMake(10, 15, searchImage.size.width, searchImage.size.height)];//想设置图片的位置，但是貌似不管用
+       
         imageIV.image =searchImage;
+        imageIV.backgroundColor = [UIColor redColor];
         imageIV.userInteractionEnabled = YES;
         UITapGestureRecognizer * tap =[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(searchTouchAction:)];
         [imageIV addGestureRecognizer:tap];
-        _numTf.clearButtonMode = UITextFieldViewModeAlways;
+//        _numTf.clearButtonMode
+        _numTf.clearButtonMode = UITextFieldViewModeAlways;//和右侧视图一起设置的时候不会出现。。
+//        _numTf.clearButtonMode
 //        _numTf.leftView = imageIV;
 //        _numTf.leftViewMode = UITextFieldViewModeAlways;//左边的视图，右边也一样可以添加，但是要设viewMode，不然不出来，，，
-        _numTf.rightView = imageIV;
+//        _numTf.rightView = imageIV;
+        UIView * view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 80, 40)];
+        view.backgroundColor = [UIColor grayColor];
+        [view addSubview:imageIV];
+        _numTf.rightView = view;
+        [_numTf.rightView addSubview:imageIV];
+//        _numTf.rightView.frame = CGRectMake(30, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>);
         _numTf.rightViewMode = UITextFieldViewModeAlways;
         _numTf.keyboardType = UIKeyboardTypeDecimalPad;
         _numTf.returnKeyType =  UIReturnKeyDone;
