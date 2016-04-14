@@ -42,7 +42,7 @@
 
 //        kLAPolicyDeviceOwnerAuthenticationWithBiometrics 。3次以后会提示识别识别。。然后没有后续操作，自己写。。
 //        LAPolicyDeviceOwnerAuthentication 用户指纹识别3次以后会自动跳出输入密码解锁页面。。。
-        NSData * currentDomainState =[[NSUserDefaults standardUserDefaults]valueForKey:@"TouchIDDomainState"];//这个还没有验证，不知道怎么搞，暂时就先这样吧，要不还是验证下吧，不知道等到啥时候了，验证了下，好像并没有用呀，我新添加了个指纹，然后直接就能识别成功，currentDomainState一直是nil，我删除试试,确实。一直是nil，指纹删除了，就直接不能识别成功了。
+//        NSData * currentDomainState =[[NSUserDefaults standardUserDefaults]valueForKey:@"TouchIDDomainState"];//这个还没有验证，不知道怎么搞，暂时就先这样吧，要不还是验证下吧，不知道等到啥时候了，验证了下，好像并没有用呀，我新添加了个指纹，然后直接就能识别成功，currentDomainState一直是nil，我删除试试,确实。一直是nil，指纹删除了，就直接不能识别成功了。
         
         
         
@@ -50,10 +50,11 @@
             
             if (success) {
                 NSLog(@"指纹识别成功");
-                [[NSUserDefaults standardUserDefaults]setValue:currentDomainState forKey:@"TouchIDDomainState"];
+//                [[NSUserDefaults standardUserDefaults]setValue:currentDomainState forKey:@"TouchIDDomainState"];
+                
                 dispatch_async(dispatch_get_main_queue(), ^{
                     //                    [view removeFromSuperview];
-                    [[NSUserDefaults standardUserDefaults]setValue:[NSString stringWithFormat:@"%d",self.mySwitch.on] forKey:@"ontouch"];
+//                    [[NSUserDefaults standardUserDefaults]setValue:[NSString stringWithFormat:@"%d",self.mySwitch.on] forKey:@"ontouch"];
                 });
             }
             else{

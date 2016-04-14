@@ -68,6 +68,7 @@
         [_dataArr addObject:@"FirstViewController"];
         [_dataArr addObject:@"TwoViewController"];
         [_dataArr addObject:@"TouchIDViewController"];
+        [_dataArr addObject:@"TextfieldViewController"];
     }
     return _dataArr;
 }
