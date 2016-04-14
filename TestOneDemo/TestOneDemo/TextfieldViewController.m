@@ -5,12 +5,14 @@
 //  Created by Yuu_zhang on 16/4/13.
 //  Copyright © 2016年 Phyllis. All rights reserved.
 //
-
+#define kScreenWidth    [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight   [UIScreen mainScreen].bounds.size.height
 #import "TextfieldViewController.h"
-
+#import "LoginInputView.h"
 @interface TextfieldViewController ()<UITextFieldDelegate>
 @property (nonatomic, strong)UITextField * tf;
 
+@property (nonatomic, strong)LoginInputView * loginview;/**<登录框，这种注释方式可以在下面有提示*/
 
 @end
 
@@ -21,6 +23,7 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor grayColor];
     [self.view addSubview:self.tf];
+    [self.view addSubview:self.loginview];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -107,6 +110,16 @@
     }
     return  _tf;
 }
+
+- (LoginInputView *)loginview{
+    if (!_loginview) {
+        _loginview = [[LoginInputView alloc]initWithInputViewType:LoingInputViewTypeNomal InputViewdelete:self];
+        _loginview.frame = CGRectMake(25, 150, kScreenWidth - 50, 84);
+        _loginview.inputDescLable.text = @"请输入手机号登录";
+    }
+    return _loginview;
+}
+
 
 /*
 #pragma mark - Navigation

@@ -1,10 +1,13 @@
 PODS:
   - FDFullscreenPopGesture (1.1)
+  - Masonry (1.0.0)
 
 DEPENDENCIES:
   - FDFullscreenPopGesture (= 1.1)
+  - Masonry
 
 SPEC CHECKSUMS:
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
+  Masonry: b529bb169217897b6354d4b56b1fada6d475b13d
 
 COCOAPODS: 0.39.0

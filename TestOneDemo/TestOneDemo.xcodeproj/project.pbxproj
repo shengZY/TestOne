@@ -17,6 +17,10 @@
 		2A0C2A581C915A0D00159473 /* MianViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A0C2A571C915A0D00159473 /* MianViewController.m */; };
 		2A0C2A5A1C915EA100159473 /* TwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0C2A591C915EA100159473 /* TwoViewController.swift */; };
 		2AA5881C1CBDF28F0013DE51 /* TextfieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA5881B1CBDF28F0013DE51 /* TextfieldViewController.m */; };
+		2AB29C7F1CBF35680058F95F /* LoginInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB29C7C1CBF35680058F95F /* LoginInputView.m */; };
+		2AB29C801CBF35680058F95F /* CheckResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB29C7E1CBF35680058F95F /* CheckResultView.m */; };
+		2AB29C861CBF3B030058F95F /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB29C851CBF3B030058F95F /* UIColor+Hex.m */; };
+		2AB29C891CBF3E1F0058F95F /* CommonFunc.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB29C881CBF3E1F0058F95F /* CommonFunc.m */; };
 		2ABD2B391C97E4390066ACA5 /* TouchIDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ABD2B381C97E4390066ACA5 /* TouchIDViewController.m */; };
 		2ABD2B3D1C98F03D0066ACA5 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ABD2B3C1C98F03D0066ACA5 /* LocalAuthentication.framework */; };
 		2AE0938B1C9FF78200457301 /* TestTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE0938A1C9FF78200457301 /* TestTextField.m */; };
@@ -61,6 +65,14 @@
 		2A0C2A591C915EA100159473 /* TwoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoViewController.swift; sourceTree = "<group>"; };
 		2AA5881A1CBDF28F0013DE51 /* TextfieldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextfieldViewController.h; sourceTree = "<group>"; };
 		2AA5881B1CBDF28F0013DE51 /* TextfieldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextfieldViewController.m; sourceTree = "<group>"; };
+		2AB29C7B1CBF35680058F95F /* LoginInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginInputView.h; sourceTree = "<group>"; };
+		2AB29C7C1CBF35680058F95F /* LoginInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginInputView.m; sourceTree = "<group>"; };
+		2AB29C7D1CBF35680058F95F /* CheckResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckResultView.h; sourceTree = "<group>"; };
+		2AB29C7E1CBF35680058F95F /* CheckResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckResultView.m; sourceTree = "<group>"; };
+		2AB29C841CBF3B030058F95F /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
+		2AB29C851CBF3B030058F95F /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		2AB29C871CBF3E1F0058F95F /* CommonFunc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonFunc.h; sourceTree = "<group>"; };
+		2AB29C881CBF3E1F0058F95F /* CommonFunc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonFunc.m; sourceTree = "<group>"; };
 		2ABD2B371C97E4390066ACA5 /* TouchIDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchIDViewController.h; sourceTree = "<group>"; };
 		2ABD2B381C97E4390066ACA5 /* TouchIDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchIDViewController.m; sourceTree = "<group>"; };
 		2ABD2B3C1C98F03D0066ACA5 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
@@ -135,6 +147,14 @@
 				2ABD2B381C97E4390066ACA5 /* TouchIDViewController.m */,
 				2AA5881A1CBDF28F0013DE51 /* TextfieldViewController.h */,
 				2AA5881B1CBDF28F0013DE51 /* TextfieldViewController.m */,
+				2AB29C7B1CBF35680058F95F /* LoginInputView.h */,
+				2AB29C7C1CBF35680058F95F /* LoginInputView.m */,
+				2AB29C7D1CBF35680058F95F /* CheckResultView.h */,
+				2AB29C7E1CBF35680058F95F /* CheckResultView.m */,
+				2AB29C841CBF3B030058F95F /* UIColor+Hex.h */,
+				2AB29C851CBF3B030058F95F /* UIColor+Hex.m */,
+				2AB29C871CBF3E1F0058F95F /* CommonFunc.h */,
+				2AB29C881CBF3E1F0058F95F /* CommonFunc.m */,
 				2A0A657C1C33DA7900BBA955 /* Assets.xcassets */,
 				2A0A65811C33DA7A00BBA955 /* Info.plist */,
 				2A0A65701C33DA7900BBA955 /* Supporting Files */,
@@ -367,12 +387,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AB29C891CBF3E1F0058F95F /* CommonFunc.m in Sources */,
 				2A0C2A581C915A0D00159473 /* MianViewController.m in Sources */,
 				2A0A65781C33DA7900BBA955 /* FirstViewController.m in Sources */,
+				2AB29C801CBF35680058F95F /* CheckResultView.m in Sources */,
+				2AB29C7F1CBF35680058F95F /* LoginInputView.m in Sources */,
 				2AE0938B1C9FF78200457301 /* TestTextField.m in Sources */,
 				2A0A65751C33DA7900BBA955 /* AppDelegate.m in Sources */,
 				2AA5881C1CBDF28F0013DE51 /* TextfieldViewController.m in Sources */,
 				2ABD2B391C97E4390066ACA5 /* TouchIDViewController.m in Sources */,
+				2AB29C861CBF3B030058F95F /* UIColor+Hex.m in Sources */,
 				2A0A65721C33DA7900BBA955 /* main.m in Sources */,
 				2A0C2A5A1C915EA100159473 /* TwoViewController.swift in Sources */,
 			);
