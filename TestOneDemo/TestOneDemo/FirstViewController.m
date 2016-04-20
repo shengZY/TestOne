@@ -264,36 +264,36 @@
 //自定义textfield
 - (UITextField *)numTf {
     if (!_numTf) {
-        _numTf = [[TestTextField alloc]initWithFrame:CGRectMake(0, 0, 300, 44)];
+        _numTf = [[UITextField alloc]initWithFrame:CGRectMake(0, 0, 300, 44)];
         _numTf.placeholder = @"请输入数字";
         
         _numTf.delegate = self;
         _numTf.borderStyle = UITextBorderStyleNone;
-//        _numTf.clipsToBounds = YES;
+        _numTf.clipsToBounds = YES;
         _numTf.layer.cornerRadius = 10.0;//边框颜色，宽度，圆角,但是只有UITextBorderStyleNone时候管用，其他模式下，不起作用。
         _numTf.layer.borderWidth = 1;
-        _numTf.layer.borderColor = [UIColor redColor].CGColor;
+        _numTf.layer.borderColor = [UIColor blueColor].CGColor;
         UIImage * searchImage =[UIImage imageNamed:@"searchIcon"];
         UIImageView * imageIV = [[UIImageView alloc]initWithFrame:CGRectMake(10, 15, searchImage.size.width, searchImage.size.height)];//想设置图片的位置，但是貌似不管用
-       
+//
         imageIV.image =searchImage;
-        imageIV.backgroundColor = [UIColor redColor];
+//        imageIV.backgroundColor = [UIColor redColor];
         imageIV.userInteractionEnabled = YES;
         UITapGestureRecognizer * tap =[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(searchTouchAction:)];
         [imageIV addGestureRecognizer:tap];
 //        _numTf.clearButtonMode
         _numTf.clearButtonMode = UITextFieldViewModeAlways;//和右侧视图一起设置的时候不会出现。。
 //        _numTf.clearButtonMode
-//        _numTf.leftView = imageIV;
-//        _numTf.leftViewMode = UITextFieldViewModeAlways;//左边的视图，右边也一样可以添加，但是要设viewMode，不然不出来，，，
+        _numTf.leftView = imageIV;
+        _numTf.leftViewMode = UITextFieldViewModeAlways;//左边的视图，右边也一样可以添加，但是要设viewMode，不然不出来，，，
 //        _numTf.rightView = imageIV;
-        UIView * view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 80, 40)];
-        view.backgroundColor = [UIColor grayColor];
-        [view addSubview:imageIV];
-        _numTf.rightView = view;
-        [_numTf.rightView addSubview:imageIV];
+//        UIView * view = [[UIView alloc]initWithFrame:CGRectMake(200, 0, 80, 40)];
+//        view.backgroundColor = [UIColor grayColor];
+//        [view addSubview:imageIV];
+//        _numTf.rightView = view;
+//        [_numTf.rightView addSubview:imageIV];
 //        _numTf.rightView.frame = CGRectMake(30, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>);
-        _numTf.rightViewMode = UITextFieldViewModeAlways;
+//        _numTf.rightViewMode = UITextFieldViewModeAlways;
         _numTf.keyboardType = UIKeyboardTypeDecimalPad;
         _numTf.returnKeyType =  UIReturnKeyDone;
     }
@@ -305,6 +305,7 @@
         _tableV = [[UITableView alloc]initWithFrame:self.view.frame style:UITableViewStylePlain];
         _tableV.delegate = self;
         _tableV.dataSource = self;
+        _tableV.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;///可以让tableView滑动的时候自动收键盘
     }
     return _tableV;
 }

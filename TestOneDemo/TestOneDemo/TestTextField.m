@@ -10,7 +10,7 @@
 
 @implementation TestTextField
 
-//UITextField 的子类可以重新以下方法，只有子类可以。
+//UITextField 的子类可以重新以下方法，只有子类可以。可以更改原来clear等的位置。。
 - (CGRect)clearButtonRectForBounds:(CGRect)bounds{
     return bounds;
 }

@@ -21,6 +21,7 @@
 		2AB29C801CBF35680058F95F /* CheckResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB29C7E1CBF35680058F95F /* CheckResultView.m */; };
 		2AB29C861CBF3B030058F95F /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB29C851CBF3B030058F95F /* UIColor+Hex.m */; };
 		2AB29C891CBF3E1F0058F95F /* CommonFunc.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB29C881CBF3E1F0058F95F /* CommonFunc.m */; };
+		2AB29C8F1CC7694C0058F95F /* MyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB29C8E1CC7694C0058F95F /* MyTableViewController.m */; };
 		2ABD2B391C97E4390066ACA5 /* TouchIDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ABD2B381C97E4390066ACA5 /* TouchIDViewController.m */; };
 		2ABD2B3D1C98F03D0066ACA5 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ABD2B3C1C98F03D0066ACA5 /* LocalAuthentication.framework */; };
 		2AE0938B1C9FF78200457301 /* TestTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE0938A1C9FF78200457301 /* TestTextField.m */; };
@@ -73,6 +74,8 @@
 		2AB29C851CBF3B030058F95F /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
 		2AB29C871CBF3E1F0058F95F /* CommonFunc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonFunc.h; sourceTree = "<group>"; };
 		2AB29C881CBF3E1F0058F95F /* CommonFunc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonFunc.m; sourceTree = "<group>"; };
+		2AB29C8D1CC7694C0058F95F /* MyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewController.h; sourceTree = "<group>"; };
+		2AB29C8E1CC7694C0058F95F /* MyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewController.m; sourceTree = "<group>"; };
 		2ABD2B371C97E4390066ACA5 /* TouchIDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchIDViewController.h; sourceTree = "<group>"; };
 		2ABD2B381C97E4390066ACA5 /* TouchIDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchIDViewController.m; sourceTree = "<group>"; };
 		2ABD2B3C1C98F03D0066ACA5 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
@@ -147,6 +150,8 @@
 				2ABD2B381C97E4390066ACA5 /* TouchIDViewController.m */,
 				2AA5881A1CBDF28F0013DE51 /* TextfieldViewController.h */,
 				2AA5881B1CBDF28F0013DE51 /* TextfieldViewController.m */,
+				2AB29C8D1CC7694C0058F95F /* MyTableViewController.h */,
+				2AB29C8E1CC7694C0058F95F /* MyTableViewController.m */,
 				2AB29C7B1CBF35680058F95F /* LoginInputView.h */,
 				2AB29C7C1CBF35680058F95F /* LoginInputView.m */,
 				2AB29C7D1CBF35680058F95F /* CheckResultView.h */,
@@ -390,6 +395,7 @@
 				2AB29C891CBF3E1F0058F95F /* CommonFunc.m in Sources */,
 				2A0C2A581C915A0D00159473 /* MianViewController.m in Sources */,
 				2A0A65781C33DA7900BBA955 /* FirstViewController.m in Sources */,
+				2AB29C8F1CC7694C0058F95F /* MyTableViewController.m in Sources */,
 				2AB29C801CBF35680058F95F /* CheckResultView.m in Sources */,
 				2AB29C7F1CBF35680058F95F /* LoginInputView.m in Sources */,
 				2AE0938B1C9FF78200457301 /* TestTextField.m in Sources */,
