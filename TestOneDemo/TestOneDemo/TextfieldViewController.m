@@ -14,6 +14,8 @@
 
 @property (nonatomic, strong)LoginInputView * loginview;/**<登录框，这种注释方式可以在下面有提示*/
 
+@property (nonatomic,strong)UIButton * button;
+
 @end
 
 @implementation TextfieldViewController
@@ -101,6 +103,36 @@
     return NO;
 }
 
+- (void)bttonClicked:(UIButton *)sender{
+    NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+    if ([[UIApplication sharedApplication] canOpenURL:url]) {
+        [[UIApplication sharedApplication] openURL:url];
+    }
+//    if([[[UIDevice currentDevice] systemVersion] floatValue] < 8.f)
+//    {
+//        NSURL*url=[NSURL URLWithString:@"prefs:root=Privacy"];//跳转 隐私
+//        if([[UIApplication sharedApplication] canOpenURL:url])
+//        {
+//            [[UIApplication sharedApplication] openURL:url];
+//        }
+//        else
+//        {
+//            url=[NSURL URLWithString:@"prefs:root=General"];  //跳转 通用
+//            if([[UIApplication sharedApplication] canOpenURL:url])
+//            {
+//                [[UIApplication sharedApplication] openURL:url];
+//            }
+//        }
+//    }
+//    else
+//    {
+//        NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+//        if ([[UIApplication sharedApplication] canOpenURL:url]) {
+//            [[UIApplication sharedApplication] openURL:url];
+//        }
+//    }
+}
+
 - (UITextField *)tf{
     if (!_tf) {
         _tf = [[UITextField alloc]initWithFrame:CGRectMake(50, 80, 200, 44)];
@@ -120,7 +152,15 @@
     return _loginview;
 }
 
-
+- (UIButton *)button{
+    if (!_button) {
+        _button = [UIButton buttonWithType:UIButtonTypeSystem];
+        _button.frame = CGRectMake(25, 300, 100, 44);
+        [_button setTitle:@"去设置" forState:UIControlStateNormal];
+        [_button addTarget:self action:@selector(bttonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _button;
+}
 /*
 #pragma mark - Navigation
 
