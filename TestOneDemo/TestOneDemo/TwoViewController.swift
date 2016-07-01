@@ -16,6 +16,14 @@ class TwoViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.redColor();
         // Do any additional setup after loading the view.
+        let possibleNumber = "123"
+        let convertedNumber = Int(possibleNumber)
+        if convertedNumber != nil {
+            print("convertedNumber contains some interger value")
+        }
+        
+//        let age = -3
+//        assert(age>=0 , "a person's age cannot be less than zero")
     }
 
     override func didReceiveMemoryWarning() {

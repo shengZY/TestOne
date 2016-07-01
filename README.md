@@ -1,2 +1,2 @@
 # TestOne
-这是一个测试demo，练习使用gitHub，谢谢参观
+简单demo，谢谢参观
