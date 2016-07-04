@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Charts
 
 @objc(TwoViewController)
 
@@ -24,6 +25,9 @@ class TwoViewController: UIViewController {
         
 //        let age = -3
 //        assert(age>=0 , "a person's age cannot be less than zero")
+        var a  = 1
+        a += 2
+        print(a)
     }
 
     override func didReceiveMemoryWarning() {

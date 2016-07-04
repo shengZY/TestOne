@@ -7,4 +7,5 @@ target 'TestOneDemo' do
 
  pod ‘Masonry’
  pod 'FDFullscreenPopGesture', '1.1'
+ pod 'Charts'
 end
