@@ -9,6 +9,7 @@
 import UIKit
 import Charts
 
+
 @objc(TwoViewController)
 
 class TwoViewController: UIViewController {
@@ -28,13 +29,58 @@ class TwoViewController: UIViewController {
         var a  = 1
         a += 2
         print(a)
+        
+        
+        let array = ["2","3","5","7","9","11","5","7","3","2"]
+        let orderArray =  array.sort { (first, second) -> Bool in
+            first < second
+        }
+        print(orderArray)
+        let set  = Set(orderArray)
+        print(set)
+        
+        
+        var lastArray :Array<AnyObject> = []
+        for item in set {
+            var originalArray :Array<String> = []
+            for original in orderArray {
+                if original == item {
+                    originalArray.append(item)
+                }
+            }
+            
+            lastArray.append(originalArray)
+        }
+        print(lastArray)
+        
+        
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    func getPriousorLaterDateFormDate(date:NSDate , day : Int) -> NSDate {
+        let dateComponents = NSDateComponents()
+        dateComponents.day = day
+        let calender = NSCalendar.init(calendarIdentifier: NSCalendarIdentifierGregorian)
+        let mdate =  calender?.dateByAddingComponents(dateComponents, toDate: date, options: NSCalendarOptions.WrapComponents)
+        return mdate!
+    }
     
+    func makeXValues() -> [String] {
+        var dateArr = [ String ]()
+        let currentDate = NSDate()
+        let labelFormatter = NSDateFormatter()
+        labelFormatter.dateFormat = "MMM-dd"
+        for i  in -4..<2 {
+            let date  = getPriousorLaterDateFormDate(currentDate, day: i)
+            let dateStr = labelFormatter.stringFromDate(date)
+            dateArr.append(dateStr)
+        }
+        return dateArr
+    }
 
     /*
     // MARK: - Navigation

@@ -4,17 +4,20 @@ PODS:
   - Charts/Core (2.2.5)
   - FDFullscreenPopGesture (1.1)
   - Masonry (1.0.1)
+  - SnapKit (0.21.1)
 
 DEPENDENCIES:
   - Charts
   - FDFullscreenPopGesture (= 1.1)
   - Masonry
+  - SnapKit
 
 SPEC CHECKSUMS:
   Charts: b48fcc8d7190de910ff9e9748f5360c8ea7856e5
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
+  SnapKit: bbad04cb016c7cead63965f16b00c09318d271ee
 
-PODFILE CHECKSUM: 02dc07789aac13dea794a7e8f56c4b21d8ed082e
+PODFILE CHECKSUM: 6cf1d3ac3da2a54368508dcdb189db5582a4875a
 
 COCOAPODS: 1.0.1
