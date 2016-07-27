@@ -70,6 +70,7 @@
         [_dataArr addObject:@"TouchIDViewController"];
         [_dataArr addObject:@"TextfieldViewController"];
         [_dataArr addObject:@"MyTableViewController"];
+        [_dataArr addObject:@"ScrollViewLayout"];
     }
     return _dataArr;
 }
