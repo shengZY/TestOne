@@ -10,10 +10,11 @@ import UIKit
 
 extension UIColor{
 
+    /** hex 16进制串转Color*/
   class public func zy_colorWithHex(hex hex:String) -> UIColor {
         return proceesHex(hex, alpha: 1.0)
     }
-    
+    /** hex 16进制串转Color alpha 透明度*/
   class public func zy_colorWithHexAndAlpha(hex hex:String,alpha:CGFloat) -> UIColor {
         return proceesHex(hex, alpha: alpha)
     }

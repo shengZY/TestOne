@@ -13,7 +13,7 @@ import Charts
 @objc(TwoViewController)
 
 class TwoViewController: UIViewController ,UITextFieldDelegate {
-    var textfield : ZYAnimationTextfield!
+    var textfield : ZYAnimationTextfield! /** textfield */
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.redColor();
@@ -30,7 +30,7 @@ class TwoViewController: UIViewController ,UITextFieldDelegate {
         a += 2
         print(a)
         
-        
+
         let array = ["2","3","5","7","9","11","5","7","3","2"]
         let orderArray =  array.sort { (first, second) -> Bool in
             first < second
@@ -52,12 +52,15 @@ class TwoViewController: UIViewController ,UITextFieldDelegate {
             lastArray.append(originalArray)
         }
         print(lastArray)
-        
-        textfield =  ZYAnimationTextfield.init(frame: CGRectMake(40, 100, kSCreenWith - 80, 84) ,viewType: ZYTextfieldViewType.Normal,delegate: self)
+        textfield =  ZYAnimationTextfield.init(frame: CGRectMake(40, 100, kSCreenWith - 80, 84) ,viewType: ZYTextfieldViewType.VerCode,delegate: self)
         textfield.descriptionLabel.text = "请输入用户名"
+        textfield.verTimeLbl.text = "获取验证码"
+        textfield.verButton.addTarget(self, action: #selector(TwoViewController.verCodeButtonClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(textfield)
     }
-
+    func verCodeButtonClicked(button:UIButton) {
+        print("get vercode")
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

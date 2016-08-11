@@ -132,6 +132,9 @@
 //        }
 //    }
 }
+- (void)verCode{
+    NSLog(@"lallalal");
+}
 
 - (UITextField *)tf{
     if (!_tf) {
@@ -148,6 +151,8 @@
         _loginview = [[LoginInputView alloc]initWithInputViewType:LoingInputViewTypeVerCode InputViewdelete:self];
         _loginview.frame = CGRectMake(25, 150, kScreenWidth - 50, 84);
         _loginview.inputDescLable.text = @"请输入手机号登录";
+        _loginview.timeLable.text = @"点击获取验证码";
+        [_loginview.rigthBtn addTarget:self action:@selector(verCode) forControlEvents:UIControlEventTouchUpInside];
     }
     return _loginview;
 }
