@@ -34,7 +34,7 @@ class ScrollViewLayout: UIViewController {
         func createSubViews(){
             redView.addSubview(button)
         redView.backgroundColor = UIColor.redColor()
-        blueView.backgroundColor = UIColor.clearColor()
+        blueView.backgroundColor = UIColor.blueColor()
         scorllview.backgroundColor  = UIColor.grayColor()
         self.view.addSubview(scorllview)
 //        scorllview.addSubview(container)
@@ -81,16 +81,20 @@ class ScrollViewLayout: UIViewController {
                 3, animations: { 
 //                   self.redView.transform = CGAffineTransformScale(CGAffineTransformMakeTranslation(0, 0), 1.0, 1.0)
                     self.redView.transform = CGAffineTransformScale(CGAffineTransformMakeTranslation(0, 0), 1.0, 1.0)
+                    self.blueView.transform = CGAffineTransformScale(CGAffineTransformMakeTranslation(0, 0), 1.0, 1.0)
             })
             
         }
         else{
             //close need open
+//            self.redView.layer.anchorPoint = CGPointMake(0.5,0 )
             UIView.animateWithDuration(
                 3, animations: {
 //                    self.redView.transform = CGAffineTransformScale(CGAffineTransformMakeTranslation(0, 25), 0.5, 0.5)
                     self.redView.transform = CGAffineTransformScale(CGAffineTransformMakeTranslation(0, 0), 1.0, 300/self.redView.frame.size.height)
+                    self.blueView.transform = CGAffineTransformScale(CGAffineTransformMakeTranslation(0, self.redView.frame.size.height - 200 ), 1.0, 1.0)
                     print("redView.frame.height \(self.redView.frame.size.height)")
+                    print("blueView.frame.height \(self.blueView.frame.size.height)")
             })
         }
         status = !status

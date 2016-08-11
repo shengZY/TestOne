@@ -25,6 +25,8 @@
 		2ABD2B3D1C98F03D0066ACA5 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ABD2B3C1C98F03D0066ACA5 /* LocalAuthentication.framework */; };
 		2AE0938B1C9FF78200457301 /* TestTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE0938A1C9FF78200457301 /* TestTextField.m */; };
 		B10303A41D40BB3C00BF56C4 /* ScrollViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10303A31D40BB3C00BF56C4 /* ScrollViewLayout.swift */; };
+		B114FB381D5B0C0E003B515E /* ZYAnimationTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = B114FB371D5B0C0E003B515E /* ZYAnimationTextfield.swift */; };
+		B114FB741D5B1DC9003B515E /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B114FB731D5B1DC9003B515E /* UIColor+Extension.swift */; };
 		DB12FE654F21AA9049862FD7 /* Pods_TestOneDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC5796A7E9B2DAD422A3A81 /* Pods_TestOneDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +87,8 @@
 		5DC5796A7E9B2DAD422A3A81 /* Pods_TestOneDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestOneDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA51DAD0854D6C97D01D006D /* Pods-TestOneDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestOneDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestOneDemo/Pods-TestOneDemo.release.xcconfig"; sourceTree = "<group>"; };
 		B10303A31D40BB3C00BF56C4 /* ScrollViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewLayout.swift; sourceTree = "<group>"; };
+		B114FB371D5B0C0E003B515E /* ZYAnimationTextfield.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZYAnimationTextfield.swift; sourceTree = "<group>"; };
+		B114FB731D5B1DC9003B515E /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		B19D35B51D40AC79002D1124 /* MyPlayground1.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = MyPlayground1.playground; path = ../../MyPlayground1.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -149,6 +153,8 @@
 				2AE093891C9FF78200457301 /* TestTextField.h */,
 				2AE0938A1C9FF78200457301 /* TestTextField.m */,
 				2A0C2A591C915EA100159473 /* TwoViewController.swift */,
+				B114FB371D5B0C0E003B515E /* ZYAnimationTextfield.swift */,
+				B114FB731D5B1DC9003B515E /* UIColor+Extension.swift */,
 				B10303A31D40BB3C00BF56C4 /* ScrollViewLayout.swift */,
 				2ABD2B371C97E4390066ACA5 /* TouchIDViewController.h */,
 				2ABD2B381C97E4390066ACA5 /* TouchIDViewController.m */,
@@ -410,7 +416,9 @@
 				2A0C2A581C915A0D00159473 /* MianViewController.m in Sources */,
 				2A0A65781C33DA7900BBA955 /* FirstViewController.m in Sources */,
 				2AB29C8F1CC7694C0058F95F /* MyTableViewController.m in Sources */,
+				B114FB381D5B0C0E003B515E /* ZYAnimationTextfield.swift in Sources */,
 				2AB29C801CBF35680058F95F /* CheckResultView.m in Sources */,
+				B114FB741D5B1DC9003B515E /* UIColor+Extension.swift in Sources */,
 				2AB29C7F1CBF35680058F95F /* LoginInputView.m in Sources */,
 				2AE0938B1C9FF78200457301 /* TestTextField.m in Sources */,
 				2A0A65751C33DA7900BBA955 /* AppDelegate.m in Sources */,

@@ -145,7 +145,7 @@
 
 - (LoginInputView *)loginview{
     if (!_loginview) {
-        _loginview = [[LoginInputView alloc]initWithInputViewType:LoingInputViewTypeNomal InputViewdelete:self];
+        _loginview = [[LoginInputView alloc]initWithInputViewType:LoingInputViewTypeVerCode InputViewdelete:self];
         _loginview.frame = CGRectMake(25, 150, kScreenWidth - 50, 84);
         _loginview.inputDescLable.text = @"请输入手机号登录";
     }

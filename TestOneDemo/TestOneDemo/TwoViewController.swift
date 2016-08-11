@@ -12,8 +12,8 @@ import Charts
 
 @objc(TwoViewController)
 
-class TwoViewController: UIViewController {
-
+class TwoViewController: UIViewController ,UITextFieldDelegate {
+    var textfield : ZYAnimationTextfield!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.redColor();
@@ -53,7 +53,9 @@ class TwoViewController: UIViewController {
         }
         print(lastArray)
         
-        
+        textfield =  ZYAnimationTextfield.init(frame: CGRectMake(40, 100, kSCreenWith - 80, 84) ,viewType: ZYTextfieldViewType.Normal,delegate: self)
+        textfield.descriptionLabel.text = "请输入用户名"
+        self.view.addSubview(textfield)
     }
 
     
@@ -81,7 +83,16 @@ class TwoViewController: UIViewController {
         }
         return dateArr
     }
-
+//    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+//        if range.location > 5 {
+//            return false
+//        }
+//        return true
+//    }
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        textfield.textfield.resignFirstResponder()
+    }
+    
     /*
     // MARK: - Navigation
 
