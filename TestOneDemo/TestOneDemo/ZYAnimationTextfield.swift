@@ -48,6 +48,11 @@ class ZYAnimationTextfield: UIView ,UITextFieldDelegate{
         lable.font = UIFont.systemFontOfSize(16)
         return lable
     }()
+    private lazy var verSeparateLine :UILabel = {
+        let lineLbl = UILabel()
+        lineLbl.backgroundColor = UIColor.zy_colorWithHex(hex: "0xcccccc")
+        return lineLbl
+    }()
     private lazy var deslableView:UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.whiteColor()
@@ -74,6 +79,7 @@ class ZYAnimationTextfield: UIView ,UITextFieldDelegate{
         let btn = UIButton.init(type: UIButtonType.Custom)
         return btn
     }()
+
     var textDelegate : UITextFieldDelegate?
     private var currentviewType : ZYTextfieldViewType
     init(frame: CGRect ,viewType:ZYTextfieldViewType,delegate:UITextFieldDelegate) {
@@ -124,9 +130,8 @@ class ZYAnimationTextfield: UIView ,UITextFieldDelegate{
         }
         //验证码
         else{
-            let lineLbl = UILabel()
-            lineLbl.backgroundColor = UIColor.zy_colorWithHex(hex: "0xcccccc")
-            self.addSubview(lineLbl)
+            
+            self.addSubview(verSeparateLine)
             self.addSubview(verTimeLbl)
             self.addSubview(verButton)
             textfield.snp_makeConstraints(closure: { (make) in
@@ -135,20 +140,20 @@ class ZYAnimationTextfield: UIView ,UITextFieldDelegate{
                 make.right.equalTo(backgoundView.snp_centerX).offset(50)
                 make.height.equalTo(backgoundView.snp_height)
             })
-            lineLbl.snp_makeConstraints(closure: { (make) in
+            verSeparateLine.snp_makeConstraints(closure: { (make) in
                 make.left.equalTo(textfield.snp_right).offset(4)
                 make.width.equalTo(1)
                 make.height.equalTo(30)
                 make.bottom.equalTo(self.backgoundView.snp_bottom).offset(-12)
             })
             verTimeLbl.snp_makeConstraints(closure: { (make) in
-                make.left.equalTo(lineLbl.snp_right)
+                make.left.equalTo(verSeparateLine.snp_right)
                 make.right.equalTo(backgoundView.snp_right)
                 make.height.equalTo(backgoundView.snp_height)
                 make.centerY.equalTo(backgoundView.snp_centerY)
             })
             verButton.snp_makeConstraints(closure: { (make) in
-                make.left.equalTo(lineLbl.snp_right)
+                make.left.equalTo(verSeparateLine.snp_right)
                 make.right.equalTo(backgoundView.snp_right)
                 make.height.centerY.equalTo(backgoundView)
             })
@@ -209,4 +214,12 @@ class ZYAnimationTextfield: UIView ,UITextFieldDelegate{
         }
          self.textDelegate?.textFieldDidEndEditing?(textField)
     }
+    /** 设置边线颜色*/
+    func borderColor(color:UIColor) {
+        backgoundView.layer.borderColor = color.CGColor
+        if currentviewType == ZYTextfieldViewType.VerCode {
+            verSeparateLine.backgroundColor = color
+        }
+    }
+    
 }

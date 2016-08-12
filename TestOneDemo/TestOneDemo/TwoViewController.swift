@@ -55,6 +55,7 @@ class TwoViewController: UIViewController ,UITextFieldDelegate {
         textfield =  ZYAnimationTextfield.init(frame: CGRectMake(40, 100, kSCreenWith - 80, 84) ,viewType: ZYTextfieldViewType.VerCode,delegate: self)
         textfield.descriptionLabel.text = "请输入用户名"
         textfield.verTimeLbl.text = "获取验证码"
+        textfield.borderColor(UIColor.redColor())
         textfield.verButton.addTarget(self, action: #selector(TwoViewController.verCodeButtonClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(textfield)
     }
