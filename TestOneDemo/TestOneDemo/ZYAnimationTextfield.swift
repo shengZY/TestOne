@@ -96,7 +96,6 @@ class ZYAnimationTextfield: UIView ,UITextFieldDelegate{
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     private func createSubvies() {
         self.addSubview(backgoundView)
         self.addSubview(deslableView)

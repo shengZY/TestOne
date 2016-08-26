@@ -9,4 +9,5 @@ target 'TestOneDemo' do
  pod 'FDFullscreenPopGesture', '1.1'
  pod 'Charts'
  pod 'SnapKit'
+ pod 'JSPatch'
 end

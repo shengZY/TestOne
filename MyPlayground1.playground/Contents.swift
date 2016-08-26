@@ -187,4 +187,111 @@ let lable = UILabel.init(frame: CGRectMake(0, 0, 200,30))
 lable.text = "hello "
 lable.backgroundColor = UIColor.redColor()
 
+//struct
+struct bussinessCard {
+    let name: String
+    var contactInfo: String
+}
+var approveBussinessCard = bussinessCard(name: "ZY",contactInfo: "123456")
+var person1 = approveBussinessCard
+var person2 = approveBussinessCard
+approveBussinessCard.contactInfo = "qqqqqqq"
+person1.contactInfo = "wwwwwww"
+
+print(approveBussinessCard.contactInfo)
+print(person1.contactInfo)
+print(person2)
+
+class bank {
+    var accountNumber: Int = 0
+    var balance: Double
+    init(accountNumber:Int,balance:Double){
+        self.balance = balance
+        self.accountNumber = accountNumber
+    }
+    
+}
+
+var bankOfAmerica = bank(accountNumber: 12345, balance: 1000)
+
+var passbook1 = bankOfAmerica
+
+var passbook2 = bankOfAmerica
+bankOfAmerica.balance = 500
+passbook1.balance = 200
+
+print(bankOfAmerica.balance)
+print(passbook1.balance)
+print(passbook1.balance)
+
+
+enum Weather {
+    case Sunny
+    case Cloudy
+    case Rainy
+    case Snow
+}
+
+print(Weather.Sunny)
+print(Weather.Rainy)
+
+enum performance :Int {
+    case Awesome = 100
+    case Average = 80
+    case Poor = 60
+    case Fiasco = 40
+}
+print(performance.Awesome.rawValue)
+print(performance.Awesome)
+print(performance.Fiasco.rawValue)
+print(performance.Fiasco)
+
+
+enum Weather1{
+    case Sunny
+    case Cloudy(cloudyType:String)
+    case Rain(inches: Int)
+    case Snow(inches:Int,packingSnow:Bool)
+}
+
+let firstSnow = Weather1.Snow(inches: 2, packingSnow: false)
+switch firstSnow {
+case Weather1.Snow(let inches,let packingSnow):
+    print("It snowed \(inches) inches but it was \(packingSnow) condition for packing snow")
+default:
+    print("It didn't snowed ")
+    break
+}
+
+
+enum perforamce1 {
+    case Awesome
+    case Average
+    case Poor
+    case Fiasco
+    func moreInforamtion() -> String {
+        switch self {
+        case perforamce1.Awesome :
+            return "Employee of the year contender"
+        case perforamce1.Average:
+            return "Was good enought for the job but nothing special"
+        case perforamce1.Poor:
+            return "Is warking on very thin ice. If continued then weill be fired"
+        case perforamce1.Fiasco:
+            return "Caused lots of losses to company & should be fired immediately"
+        }
+    }
+}
+
+print(perforamce1.Awesome.moreInforamtion())
+print(perforamce1.Awesome)
+
+
+
+
+
+
+
+
+
 

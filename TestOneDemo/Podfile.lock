@@ -3,21 +3,26 @@ PODS:
     - Charts/Core (= 2.2.5)
   - Charts/Core (2.2.5)
   - FDFullscreenPopGesture (1.1)
+  - JSPatch (1.1):
+    - JSPatch/Core (= 1.1)
+  - JSPatch/Core (1.1)
   - Masonry (1.0.1)
   - SnapKit (0.21.1)
 
 DEPENDENCIES:
   - Charts
   - FDFullscreenPopGesture (= 1.1)
+  - JSPatch
   - Masonry
   - SnapKit
 
 SPEC CHECKSUMS:
   Charts: b48fcc8d7190de910ff9e9748f5360c8ea7856e5
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
+  JSPatch: ade285ad1d8f06146ed6054a39cef87509453299
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
   SnapKit: bbad04cb016c7cead63965f16b00c09318d271ee
 
-PODFILE CHECKSUM: 6cf1d3ac3da2a54368508dcdb189db5582a4875a
+PODFILE CHECKSUM: 841f35a2c5ca7b8481e20dd8a0b66e71c34797e5
 
 COCOAPODS: 1.0.1
