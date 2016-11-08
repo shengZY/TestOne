@@ -84,16 +84,12 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "$BUILT_PRODUCTS_DIR/Charts/Charts.framework"
   install_framework "$BUILT_PRODUCTS_DIR/FDFullscreenPopGesture/FDFullscreenPopGesture.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/JSPatch/JSPatch.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Masonry/Masonry.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SnapKit/SnapKit.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "$BUILT_PRODUCTS_DIR/Charts/Charts.framework"
   install_framework "$BUILT_PRODUCTS_DIR/FDFullscreenPopGesture/FDFullscreenPopGesture.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/JSPatch/JSPatch.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Masonry/Masonry.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SnapKit/SnapKit.framework"
 fi
