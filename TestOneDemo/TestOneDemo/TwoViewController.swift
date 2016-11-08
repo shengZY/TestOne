@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Charts
+
 
 
 @objc(TwoViewController)
@@ -16,7 +16,7 @@ class TwoViewController: UIViewController ,UITextFieldDelegate {
     var textfield : ZYAnimationTextfield! /** textfield */
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.redColor();
+        self.view.backgroundColor = UIColor.red;
         // Do any additional setup after loading the view.
         let possibleNumber = "123"
         let convertedNumber = Int(possibleNumber)
@@ -32,7 +32,7 @@ class TwoViewController: UIViewController ,UITextFieldDelegate {
         
 
         let array = ["2","3","5","7","9","11","5","7","3","2"]
-        let orderArray =  array.sort { (first, second) -> Bool in
+        let orderArray =  array.sorted { (first, second) -> Bool in
             first < second
         }
         print(orderArray)
@@ -49,17 +49,17 @@ class TwoViewController: UIViewController ,UITextFieldDelegate {
                 }
             }
             
-            lastArray.append(originalArray)
+            lastArray.append(originalArray as AnyObject)
         }
         print(lastArray)
-        textfield =  ZYAnimationTextfield.init(frame: CGRectMake(40, 100, kSCreenWith - 80, 84) ,viewType: ZYTextfieldViewType.VerCode,delegate: self)
+        textfield =  ZYAnimationTextfield.init(frame: CGRect(x: 40, y: 100, width: kSCreenWith - 80, height: 84) ,viewType: ZYTextfieldViewType.verCode,delegate: self)
         textfield.descriptionLabel.text = "请输入用户名"
         textfield.verTimeLbl.text = "获取验证码"
-        textfield.borderColor(UIColor.redColor())
-        textfield.verButton.addTarget(self, action: #selector(TwoViewController.verCodeButtonClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        textfield.borderColor(UIColor.red)
+        textfield.verButton.addTarget(self, action: #selector(TwoViewController.verCodeButtonClicked(_:)), for: UIControlEvents.touchUpInside)
         self.view.addSubview(textfield)
     }
-    func verCodeButtonClicked(button:UIButton) {
+    func verCodeButtonClicked(_ button:UIButton) {
         print("get vercode")
     }
     
@@ -67,22 +67,22 @@ class TwoViewController: UIViewController ,UITextFieldDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    func getPriousorLaterDateFormDate(date:NSDate , day : Int) -> NSDate {
-        let dateComponents = NSDateComponents()
+    func getPriousorLaterDateFormDate(_ date:Date , day : Int) -> Date {
+        var dateComponents = DateComponents()
         dateComponents.day = day
-        let calender = NSCalendar.init(calendarIdentifier: NSCalendarIdentifierGregorian)
-        let mdate =  calender?.dateByAddingComponents(dateComponents, toDate: date, options: NSCalendarOptions.WrapComponents)
+        let calender = Calendar.init(identifier: Calendar.Identifier.gregorian)
+        let mdate =  (calender as NSCalendar?)?.date(byAdding: dateComponents, to: date, options: NSCalendar.Options.wrapComponents)
         return mdate!
     }
     
     func makeXValues() -> [String] {
         var dateArr = [ String ]()
-        let currentDate = NSDate()
-        let labelFormatter = NSDateFormatter()
+        let currentDate = Date()
+        let labelFormatter = DateFormatter()
         labelFormatter.dateFormat = "MMM-dd"
         for i  in -4..<2 {
             let date  = getPriousorLaterDateFormDate(currentDate, day: i)
-            let dateStr = labelFormatter.stringFromDate(date)
+            let dateStr = labelFormatter.string(from: date)
             dateArr.append(dateStr)
         }
         return dateArr
@@ -93,7 +93,7 @@ class TwoViewController: UIViewController ,UITextFieldDelegate {
 //        }
 //        return true
 //    }
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         textfield.textfield.resignFirstResponder()
     }
     

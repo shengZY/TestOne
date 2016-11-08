@@ -4,17 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Charts.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>FDFullscreenPopGesture.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>JSPatch.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -42,27 +32,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>81A87C3F3D9457506FBC6FB7643F3880</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>A9A83F63385AA43314397B8DD375464B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B13574E17EED8AAA9A85CE67AD5B4570</key>
+		<key>B0CD996DD1BE266E4729CA340C5FBA58</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C6828C2508515BC0428D6BDAA1292DC9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D03BA246EC6645D399A0B610EC36DD30</key>
+		<key>F84FCD7DF53B2BC043DEED94DCFE678C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

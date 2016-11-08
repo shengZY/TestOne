@@ -7,8 +7,7 @@
 //
 
 #import "AppDelegate.h"
-//#import <JSPatch/JSPatch.h>
-//#import "JPEngine.h"
+
 #import "MianViewController.h"
 
 @interface AppDelegate ()
@@ -25,12 +24,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = [[UINavigationController alloc]initWithRootViewController:[[MianViewController alloc]init]];
     [self.window makeKeyAndVisible];
-    
-//    [JSPatch startWithAppKey:@"174e03967471b9c8"];
-//    NSString* path = [[NSBundle mainBundle]pathForResource:@"Test" ofType:@"js"];
-//    NSString* js = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-//    [JPEngine evaluateScript:js];
-//    [JSPatch sync];
+
     
     
     return YES;
